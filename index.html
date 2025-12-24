@@ -2272,31 +2272,80 @@
         // ============================================
         function downloadScript(scriptPath) {
             try {
-                // Força download direto do GitHub
-                const downloadUrl = `https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/${scriptPath}`;
                 const fileName = scriptPath.split('/').pop();
+                const downloadUrl = `https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/${scriptPath}`;
 
-                // Cria link temporário para forçar download
-                const downloadLink = document.createElement('a');
-                downloadLink.href = downloadUrl;
-                downloadLink.download = fileName;
-                downloadLink.target = '_blank';
-                downloadLink.rel = 'noopener noreferrer';
-                downloadLink.style.display = 'none';
+                // Usa fetch para baixar o arquivo e forçar download automático
+                fetch(downloadUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/octet-stream'
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao baixar arquivo');
+                        }
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        // Cria URL temporária do blob
+                        const blobUrl = window.URL.createObjectURL(blob);
 
-                // Adiciona ao DOM, clica e remove
-                document.body.appendChild(downloadLink);
-                downloadLink.click();
-                setTimeout(() => {
-                    document.body.removeChild(downloadLink);
-                }, 100);
+                        // Cria link temporário para forçar download
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = blobUrl;
+                        downloadLink.download = fileName;
+                        downloadLink.style.display = 'none';
+                        downloadLink.setAttribute('download', fileName); // Força download
 
-                // Feedback visual
-                if (typeof showDownloadFeedback === 'function') {
-                    showDownloadFeedback(fileName);
-                } else {
-                    console.log(`✅ Download iniciado: ${fileName}`);
-                }
+                        // Adiciona ao DOM
+                        document.body.appendChild(downloadLink);
+
+                        // Força o clique programático
+                        const clickEvent = new MouseEvent('click', {
+                            view: window,
+                            bubbles: true,
+                            cancelable: true
+                        });
+                        downloadLink.dispatchEvent(clickEvent);
+
+                        // Também tenta click() direto como fallback
+                        downloadLink.click();
+
+                        // Limpa após download (com delay maior para garantir)
+                        setTimeout(() => {
+                            if (downloadLink.parentNode) {
+                                document.body.removeChild(downloadLink);
+                            }
+                            window.URL.revokeObjectURL(blobUrl);
+                        }, 200);
+
+                        // Feedback visual
+                        console.log(`✅ Download automático iniciado: ${fileName}`);
+                    })
+                    .catch(error => {
+                        console.error('❌ Erro no download:', error);
+                        // Fallback alternativo: usa iframe para forçar download
+                        try {
+                            const iframe = document.createElement('iframe');
+                            iframe.style.display = 'none';
+                            iframe.src = downloadUrl;
+                            document.body.appendChild(iframe);
+
+                            setTimeout(() => {
+                                document.body.removeChild(iframe);
+                            }, 2000);
+
+                            // Último fallback: abre em nova aba
+                            setTimeout(() => {
+                                window.open(downloadUrl, '_blank');
+                            }, 500);
+                        } catch (fallbackError) {
+                            console.error('Erro no fallback:', fallbackError);
+                            alert(`Erro ao baixar ${fileName}. Por favor, tente novamente.`);
+                        }
+                    });
 
             } catch (error) {
                 console.error('❌ Erro no download:', error);
