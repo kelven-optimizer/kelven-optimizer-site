@@ -397,34 +397,6 @@
             box-shadow: 0 20px 40px rgba(139, 0, 255, 0.4);
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--purple-accent);
-            border: 2px solid var(--purple-accent);
-            position: relative;
-        }
-
-        .btn-secondary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--purple-accent);
-            transition: width 0.3s ease;
-            z-index: -1;
-        }
-
-        .btn-secondary:hover::before {
-            width: 100%;
-        }
-
-        .btn-secondary:hover {
-            color: var(--bg-primary);
-            transform: translateY(-3px);
-        }
-
         /* Section Titles */
         .section-title {
             text-align: center;
@@ -531,264 +503,7 @@
             line-height: 1.7;
         }
 
-        /* Coming Soon Section */
-        .coming-soon {
-            padding: 8rem 2rem;
-            background: linear-gradient(135deg, rgba(139, 0, 255, 0.1) 0%, rgba(15, 15, 15, 0.9) 100%);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .coming-soon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(139, 0, 255, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 0.5;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        .coming-soon-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .coming-soon-title {
-            font-size: 3rem;
-            font-weight: 800;
-            background: var(--gradient-glow);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            animation: glow 3s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-
-            0%,
-            100% {
-                filter: brightness(1) drop-shadow(0 0 20px rgba(139, 0, 255, 0.5));
-            }
-
-            50% {
-                filter: brightness(1.3) drop-shadow(0 0 40px rgba(139, 0, 255, 0.8));
-            }
-        }
-
-        .coming-soon-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .product-card {
-            background: var(--bg-card);
-            border: 2px solid var(--border-color);
-            border-radius: 2rem;
-            padding: 3rem 2rem;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            will-change: transform;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-purple);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: -1;
-        }
-
-        .product-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .product-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: var(--purple-accent);
-            box-shadow: 0 30px 60px rgba(139, 0, 255, 0.3);
-        }
-
-        .product-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            border: 3px solid var(--purple-accent);
-            box-shadow: 0 0 30px rgba(139, 0, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            animation: productIconFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes productIconFloat {
-
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-
-            50% {
-                transform: translateY(-10px) scale(1.05);
-            }
-        }
-
-        .product-icon img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .product-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .product-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .product-features {
-            list-style: none;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .product-features li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .product-features li::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            color: var(--purple-accent);
-        }
-
-        .coming-soon-badge {
-            display: inline-block;
-            background: var(--gradient-purple);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        /* Countdown Timer */
-        .countdown-container {
-            margin-top: 4rem;
-            padding: 3rem;
-            background: rgba(139, 0, 255, 0.1);
-            border-radius: 2rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .countdown-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .countdown-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--bg-card);
-            border-radius: 1rem;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--purple-accent);
-        }
-
-        .countdown-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: var(--gradient-glow);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-            animation: countdownGlow 2s ease-in-out infinite;
-        }
-
-        @keyframes countdownGlow {
-
-            0%,
-            100% {
-                filter: brightness(1);
-            }
-
-            50% {
-                filter: brightness(1.2);
-            }
-        }
-
-        .countdown-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-        }
-
-        /* Scripts Section */
+        /* Scripts Section - DOWNLOAD DIRETO E FORÇADO */
         .scripts {
             padding: 8rem 2rem;
             background: radial-gradient(circle at 50% 50%, rgba(15, 15, 15, 0.8) 0%, var(--bg-primary) 100%);
@@ -815,23 +530,6 @@
             position: relative;
             overflow: hidden;
             will-change: transform;
-        }
-
-        .script-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 0, 255, 0.1) 0%, transparent 70%);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
-        }
-
-        .script-card:hover::before {
-            opacity: 1;
         }
 
         .script-card:hover {
@@ -910,357 +608,9 @@
             outline-offset: 2px;
         }
 
-        .download-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .download-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
         .download-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(139, 0, 255, 0.4);
-        }
-
-        /* Changelog Section */
-        .changelog {
-            padding: 8rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .changelog-container {
-            margin-top: 4rem;
-        }
-
-        .changelog-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .changelog-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--purple-accent);
-            box-shadow: 0 15px 30px rgba(139, 0, 255, 0.2);
-        }
-
-        .changelog-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .changelog-version {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--purple-accent);
-        }
-
-        .changelog-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .changelog-badge {
-            background: var(--gradient-purple);
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .changelog-badge.major {
-            background: var(--error);
-        }
-
-        .changelog-badge.minor {
-            background: var(--warning);
-        }
-
-        .changelog-badge.patch {
-            background: var(--success);
-        }
-
-        .changelog-content h4 {
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .changelog-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .changelog-list li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .changelog-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--purple-accent);
-            font-size: 1.2rem;
-        }
-
-        .changelog-list.add li::before {
-            content: '+';
-            color: var(--success);
-        }
-
-        .changelog-list.fix li::before {
-            content: '✓';
-            color: var(--purple-accent);
-        }
-
-        .changelog-list.remove li::before {
-            content: '-';
-            color: var(--error);
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 8rem 2rem;
-            background: radial-gradient(circle at 50% 50%, rgba(15, 15, 15, 0.8) 0%, var(--bg-primary) 100%);
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-grid {
-            margin-top: 4rem;
-        }
-
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: var(--purple-accent);
-        }
-
-        .faq-question {
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            background: transparent;
-            border: none;
-            width: 100%;
-            text-align: left;
-        }
-
-        .faq-question:focus {
-            outline: 2px solid var(--purple-accent);
-            outline-offset: -2px;
-        }
-
-        .faq-question:hover {
-            background: rgba(139, 0, 255, 0.05);
-        }
-
-        .faq-question h3 {
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .faq-icon {
-            font-size: 1.2rem;
-            color: var(--purple-accent);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 2rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 1.5rem 2rem;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* Documentation Section */
-        .docs {
-            padding: 8rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .docs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .doc-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .doc-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--purple-accent);
-            box-shadow: 0 15px 30px rgba(139, 0, 255, 0.2);
-        }
-
-        .doc-icon {
-            width: 3rem;
-            height: 3rem;
-            background: var(--gradient-purple);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .doc-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .doc-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Community Section */
-        .community {
-            padding: 8rem 2rem;
-            background: radial-gradient(circle at 50% 50%, rgba(15, 15, 15, 0.8) 0%, var(--bg-primary) 100%);
-        }
-
-        .community-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .community-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .community-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .community-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--purple-accent);
-            box-shadow: 0 20px 40px rgba(139, 0, 255, 0.2);
-        }
-
-        .community-icon {
-            width: 4rem;
-            height: 4rem;
-            background: var(--gradient-purple);
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-        }
-
-        .community-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .community-description {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .community-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 2rem;
-        }
-
-        .community-stat {
-            text-align: center;
-        }
-
-        .community-stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--purple-accent);
-            display: block;
-        }
-
-        .community-stat-label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         /* Footer */
@@ -1348,32 +698,12 @@
             }
 
             .features-grid,
-            .scripts-grid,
-            .products-grid,
-            .docs-grid,
-            .community-grid {
+            .scripts-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .countdown {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .countdown-number {
-                font-size: 2rem;
             }
 
             .section-title {
                 font-size: 2rem;
-            }
-
-            .coming-soon-title {
-                font-size: 2rem;
-            }
-
-            .footer-links {
-                gap: 1.5rem;
             }
         }
 
@@ -1453,7 +783,6 @@
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#features">Recursos</a></li>
-                <li><a href="#coming-soon">Em Breve</a></li>
                 <li><a href="#scripts">Scripts</a></li>
                 <li><a href="#changelog">Changelog</a></li>
                 <li><a href="#docs">Documentação</a></li>
@@ -1538,87 +867,14 @@
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon" id="coming-soon">
-        <div class="coming-soon-container">
-            <h2 class="coming-soon-title">🚀 Em Breve</h2>
-            <p class="coming-soon-subtitle">Duas novas ferramentas revolucionárias para transformar sua experiência Windows</p>
-
-            <div class="products-grid">
-                <!-- Painel Kelven Optimizer -->
-                <div class="product-card fade-in-up">
-                    <div class="product-icon">
-                        <img src="https://github.com/kelven-optimizer/kelvenoptimizer/blob/7848345f64f7bbe49e3357a73d74300a8ac1ab82/imagens/kelvenos.png?raw=true" alt="KelvenOS Painel" loading="lazy" width="50" height="50">
-                    </div>
-                    <h3 class="product-title">Kelven Optimizer Painel</h3>
-                    <p class="product-description">
-                        Interface gráfica completa para gerenciar todas as otimizações em um único lugar.
-                        Controle total sobre seu sistema com apenas alguns cliques.
-                    </p>
-                    <ul class="product-features">
-                        <li>Dashboard intuitivo e moderno</li>
-                        <li>Otimizações com um clique</li>
-                        <li>Monitoramento em tempo real</li>
-                        <li>Perfis personalizados</li>
-                        <li>Backup e restauração automática</li>
-                    </ul>
-                    <span class="coming-soon-badge">EM BREVE</span>
-                </div>
-
-                <!-- Playbook -->
-                <div class="product-card fade-in-up">
-                    <div class="product-icon">
-                        <img src="https://github.com/kelven-optimizer/kelvenoptimizer/blob/7848345f64f7bbe49e3357a73d74300a8ac1ab82/imagens/kelvenos.png?raw=true" alt="KelvenOS Playbook" loading="lazy" width="50" height="50">
-                    </div>
-                    <h3 class="product-title">KelvenOS Playbook</h3>
-                    <p class="product-description">
-                        Guia completo e interativo com todos os segredos de otimização Windows.
-                        Tutoriais passo a passo para máxima performance.
-                    </p>
-                    <ul class="product-features">
-                        <li>Guias interativos passo a passo</li>
-                        <li>Explicações técnicas detalhadas</li>
-                        <li>Vídeos tutoriais exclusivos</li>
-                        <li>Comunidade premium integrada</li>
-                        <li>Atualizações constantes</li>
-                    </ul>
-                    <span class="coming-soon-badge">EM BREVE</span>
-                </div>
-            </div>
-
-            <!-- Countdown Timer -->
-            <div class="countdown-container fade-in-up">
-                <h3 class="countdown-title">Lançamento em:</h3>
-                <div class="countdown" id="countdown">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">00</span>
-                        <span class="countdown-label">Dias</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-label">Horas</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-label">Minutos</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">Segundos</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scripts Section -->
+    <!-- Scripts Section - DOWNLOAD DIRETO E FORÇADO -->
     <section class="scripts" id="scripts">
         <div class="scripts-container">
             <h2 class="section-title">Coleção de Scripts Poderosos</h2>
             <p class="section-subtitle">11 scripts profissionais para otimizar cada aspecto do seu sistema</p>
 
             <div class="scripts-grid">
-                <!-- Performance Monitor -->
+                <!-- Performance Monitor - CORRIGIDO -->
                 <div class="script-card fade-in-up">
                     <div class="script-header">
                         <span class="script-title">Monitor de Performance</span>
@@ -1630,378 +886,179 @@
                         <span class="tag">Status</span>
                         <span class="tag">Interface</span>
                     </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/KelvenOS-Performance-Monitor.ps1" download="KelvenOS-Performance-Monitor.ps1" class="download-btn">Baixar Script</a>
+                    <button onclick="downloadScript('scripts/utilities/performance-monitor.ps1')" class="download-btn">
+                        Baixar Script
+                    </button>
                 </div>
 
-                <!-- Gaming Optimizer -->
+                <!-- Power Plan Extreme - COM CONTEÚDO REAL -->
                 <div class="script-card fade-in-up">
                     <div class="script-header">
-                        <span class="script-title">Otimizador Gamer</span>
+                        <span class="script-title">Power Plan Extreme</span>
                         <span class="script-badge">Batch</span>
                     </div>
-                    <p class="script-description">Ativa Modo Gamer, desativa DVR, define resolução do timer em 0.5ms e aplica otimizações específicas para jogos.</p>
+                    <p class="script-description">Cria plano de energia extremo com configurações máximas de performance, desativa C-states e otimiza gerenciamento de energia.</p>
                     <div class="script-tags">
-                        <span class="tag">Gamer</span>
-                        <span class="tag">FPS</span>
-                        <span class="tag">Latência</span>
+                        <span class="tag">Power Plan</span>
+                        <span class="tag">Performance</span>
+                        <span class="tag">Extremo</span>
                     </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/gaming-optimizer.bat" download="gaming-optimizer.bat" class="download-btn">Baixar Script</a>
+                    <button onclick="downloadScript('scripts/fps-extreme/01-performance-powerplan.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
                 </div>
 
-                <!-- CPU Extreme -->
+                <!-- CPU Performance -->
                 <div class="script-card fade-in-up">
                     <div class="script-header">
-                        <span class="script-title">CPU Extrema</span>
+                        <span class="script-title">CPU Performance Extrema</span>
                         <span class="script-badge">Batch</span>
                     </div>
-                    <p class="script-description">Tweaks extremos de performance: desativa C-states, otimiza plano de energia, gerenciamento de memória e agendamento de CPU.</p>
+                    <p class="script-description">Tweaks avançados de CPU: otimiza agendamento, prioridades de processo e configurações de núcleo para máxima performance.</p>
                     <div class="script-tags">
                         <span class="tag">CPU</span>
                         <span class="tag">Performance</span>
-                        <span class="tag">Avançado</span>
+                        <span class="tag">Gaming</span>
                     </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/cpu-extrema.bat" download="cpu-extrema.bat" class="download-btn">Baixar Script</a>
+                    <button onclick="downloadScript('scripts/fps-extreme/02-cpu-performance.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
                 </div>
 
-                <!-- Network Optimizer -->
+                <!-- GPU Optimization -->
                 <div class="script-card fade-in-up">
                     <div class="script-header">
-                        <span class="script-title">Otimizador de Rede</span>
+                        <span class="script-title">GPU Optimization</span>
                         <span class="script-badge">Batch</span>
                     </div>
-                    <p class="script-description">Otimiza parâmetros de rede, reduz ping, melhora estabilidade da conexão e prioriza tráfego de jogos.</p>
+                    <p class="script-description">Otimizações específicas para GPU: ajusta prioridades gráficas, configura DirectX e otimiza renderização para máximos FPS.</p>
+                    <div class="script-tags">
+                        <span class="tag">GPU</span>
+                        <span class="tag">FPS</span>
+                        <span class="tag">Gráficos</span>
+                    </div>
+                    <button onclick="downloadScript('scripts/fps-extreme/03-gpu-optimization.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
+                </div>
+
+                <!-- Memory Optimization -->
+                <div class="script-card fade-in-up">
+                    <div class="script-header">
+                        <span class="script-title">Memory Optimization</span>
+                        <span class="script-badge">Batch</span>
+                    </div>
+                    <p class="script-description">Otimiza gestão de memória RAM: limpa cache, ajusta paginação e melhora alocação de memória para jogos e aplicações.</p>
+                    <div class="script-tags">
+                        <span class="tag">RAM</span>
+                        <span class="tag">Memória</span>
+                        <span class="tag">Cache</span>
+                    </div>
+                    <button onclick="downloadScript('scripts/fps-extreme/04-memory-optimization.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
+                </div>
+
+                <!-- Network Gaming -->
+                <div class="script-card fade-in-up">
+                    <div class="script-header">
+                        <span class="script-title">Network Gaming</span>
+                        <span class="script-badge">Batch</span>
+                    </div>
+                    <p class="script-description">Otimizações de rede específicas para jogos: reduz ping, prioriza pacotes de jogo e melhora estabilidade da conexão.</p>
                     <div class="script-tags">
                         <span class="tag">Rede</span>
                         <span class="tag">Ping</span>
-                        <span class="tag">Conexão</span>
+                        <span class="tag">Gaming</span>
                     </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/otimizacao-de-rede.bat" download="otimizacao-de-rede.bat" class="download-btn">Baixar Script</a>
+                    <button onclick="downloadScript('scripts/fps-extreme/05-network-gaming.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
                 </div>
 
-                <!-- SSD Optimizer -->
+                <!-- Windows Debloat -->
                 <div class="script-card fade-in-up">
                     <div class="script-header">
-                        <span class="script-title">Otimizador SSD</span>
+                        <span class="script-title">Windows Debloat</span>
                         <span class="script-badge">Batch</span>
                     </div>
-                    <p class="script-description">Otimizações específicas para SSD: ativa TRIM, desativa prefetch, otimiza superfetch e indexing.</p>
-                    <div class="script-tags">
-                        <span class="tag">SSD</span>
-                        <span class="tag">Armazenamento</span>
-                        <span class="tag">Performance</span>
-                    </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/ssd-optimizer.bat" download="ssd-optimizer.bat" class="download-btn">Baixar Script</a>
-                </div>
-
-                <!-- Privacy Guard -->
-                <div class="script-card fade-in-up">
-                    <div class="script-header">
-                        <span class="script-title">Guarda de Privacidade</span>
-                        <span class="script-badge">Batch</span>
-                    </div>
-                    <p class="script-description">Tweks avançados de privacidade: desativa telemetria, remoção de coleta de dados e reforço de privacidade do Windows.</p>
-                    <div class="script-tags">
-                        <span class="tag">Privacidade</span>
-                        <span class="tag">Telemetria</span>
-                        <span class="tag">Segurança</span>
-                    </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/disable-telemetry.bat" download="disable-telemetry.bat" class="download-btn">Baixar Script</a>
-                </div>
-
-                <!-- System Cleanup -->
-                <div class="script-card fade-in-up">
-                    <div class="script-header">
-                        <span class="script-title">Limpeza do Sistema</span>
-                        <span class="script-badge">Batch</span>
-                    </div>
-                    <p class="script-description">Remove arquivos temporários, limpa cache, otimiza espaço em disco e melhora velocidade geral do sistema.</p>
+                    <p class="script-description">Remove aplicativos desnecessários, desativa serviços pesados e limpa o sistema para máxima performance.</p>
                     <div class="script-tags">
                         <span class="tag">Limpeza</span>
-                        <span class="tag">Espaço</span>
-                        <span class="tag">Velocidade</span>
-                    </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/limpeza-completa.bat" download="limpeza-completa.bat" class="download-btn">Baixar Script</a>
-                </div>
-
-                <!-- Network Reset -->
-                <div class="script-card fade-in-up">
-                    <div class="script-header">
-                        <span class="script-title">Reset de Rede</span>
-                        <span class="script-badge">Batch</span>
-                    </div>
-                    <p class="script-description">Reseta configurações de rede TCP/IP, renova IP, limpa cache DNS e resolve problemas de conectividade.</p>
-                    <div class="script-tags">
-                        <span class="tag">Rede</span>
-                        <span class="tag">TCP/IP</span>
-                        <span class="tag">DNS</span>
-                    </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/reset-rede.bat" download="reset-rede.bat" class="download-btn">Baixar Script</a>
-                </div>
-
-                <!-- Service Optimizer -->
-                <div class="script-card fade-in-up">
-                    <div class="script-header">
-                        <span class="script-title">Otimizador de Serviços</span>
-                        <span class="script-badge">Batch</span>
-                    </div>
-                    <p class="script-description">Desativa serviços desnecessários do Windows, melhora boot time e libera recursos do sistema.</p>
-                    <div class="script-tags">
-                        <span class="tag">Serviços</span>
-                        <span class="tag">Boot</span>
-                        <span class="tag">Recursos</span>
-                    </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/otimizacao-servicos.bat" download="otimizacao-servicos.bat" class="download-btn">Baixar Script</a>
-                </div>
-
-                <!-- Registry Optimizer -->
-                <div class="script-card fade-in-up">
-                    <div class="script-header">
-                        <span class="script-title">Otimizador de Registro</span>
-                        <span class="script-badge">Batch</span>
-                    </div>
-                    <p class="script-description">Otimiza chaves de registro do Windows, melhora responsividade e remove entradas obsoletas.</p>
-                    <div class="script-tags">
-                        <span class="tag">Registro</span>
+                        <span class="tag">Debloat</span>
                         <span class="tag">Performance</span>
-                        <span class="tag">Responsividade</span>
                     </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/reg-optimizer.bat" download="reg-optimizer.bat" class="download-btn">Baixar Script</a>
+                    <button onclick="downloadScript('scripts/fps-extreme/06-windows-debloat.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
                 </div>
 
-                <!-- Restore Point -->
+                <!-- NVIDIA Optimizer -->
                 <div class="script-card fade-in-up">
                     <div class="script-header">
-                        <span class="script-title">Criar Ponto de Restauração</span>
-                        <span class="script-badge">PowerShell</span>
+                        <span class="script-title">NVIDIA Optimizer</span>
+                        <span class="script-badge">Batch</span>
                     </div>
-                    <p class="script-description">Cria ponto de restauração do Windows antes de aplicar otimizações para segurança e recuperação.</p>
+                    <p class="script-description">Otimizações específicas para placas NVIDIA: ajusta configurações do painel de controle, perfis de jogo e drivers.</p>
                     <div class="script-tags">
+                        <span class="tag">NVIDIA</span>
+                        <span class="tag">GPU</span>
+                        <span class="tag">Drivers</span>
+                    </div>
+                    <button onclick="downloadScript('scripts/fps-extreme/07-nvidia-optimizer.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
+                </div>
+
+                <!-- AMD Optimizer -->
+                <div class="script-card fade-in-up">
+                    <div class="script-header">
+                        <span class="script-title">AMD Optimizer</span>
+                        <span class="script-badge">Batch</span>
+                    </div>
+                    <p class="script-description">Otimizações específicas para placas AMD: configura Radeon Software, ajusta perfis de jogo e otimiza drivers AMD.</p>
+                    <div class="script-tags">
+                        <span class="tag">AMD</span>
+                        <span class="tag">GPU</span>
+                        <span class="tag">Radeon</span>
+                    </div>
+                    <button onclick="downloadScript('scripts/fps-extreme/08-amd-optimizer.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
+                </div>
+
+                <!-- Ultimate FPS Booster -->
+                <div class="script-card fade-in-up">
+                    <div class="script-header">
+                        <span class="script-title">Ultimate FPS Booster</span>
+                        <span class="script-badge">Batch</span>
+                    </div>
+                    <p class="script-description">Script completo que combina todas as otimizações: CPU, GPU, memória e rede em uma única execução para máximos FPS.</p>
+                    <div class="script-tags">
+                        <span class="tag">FPS</span>
+                        <span class="tag">Completo</span>
+                        <span class="tag">Extremo</span>
+                    </div>
+                    <button onclick="downloadScript('scripts/fps-extreme/09-ultimate-fps-booster.bat')" class="download-btn">
+                        Baixar Script
+                    </button>
+                </div>
+
+                <!-- Restore Original -->
+                <div class="script-card fade-in-up">
+                    <div class="script-header">
+                        <span class="script-title">Restaurar Original</span>
+                        <span class="script-badge">Batch</span>
+                    </div>
+                    <p class="script-description">Restaura todas as configurações originais do Windows. Use este script para desfazer todas as otimizações quando necessário.</p>
+                    <div class="script-tags">
+                        <span class="tag">Restore</span>
                         <span class="tag">Backup</span>
                         <span class="tag">Segurança</span>
-                        <span class="tag">Recuperação</span>
                     </div>
-                    <a href="https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/create-restore-point.ps1" download="create-restore-point.ps1" class="download-btn">Baixar Script</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Changelog Section -->
-    <section class="changelog" id="changelog">
-        <h2 class="section-title">Changelog & Atualizações</h2>
-        <p class="section-subtitle">Acompanhe as melhorias e novidades do KelvenOS Optimizer</p>
-
-        <div class="changelog-container">
-            <!-- Versão 2.0 -->
-            <div class="changelog-item fade-in-up">
-                <div class="changelog-header">
-                    <span class="changelog-version">v2.0.0</span>
-                    <span class="changelog-badge maior">maior</span>
-                    <span class="changelog-date">Dezembro 2025</span>
-                </div>
-                <div class="changelog-content">
-                    <h4>🚀 Grandes Novidades</h4>
-                    <ul class="changelog-list add">
-                        <li>Nova interface web completa com design dark</li>
-                        <li>Adicionado sistema de monitoramento em tempo real</li>
-                        <li>Implementado otimizador de jogos com perfis específicos</li>
-                        <li>Novo script de performance extrema para CPU</li>
-                    </ul>
-
-                    <h4>✨ Melhorias</h4>
-                    <ul class="changelog-list fix">
-                        <li>Otimizado algoritmo de limpeza de registro</li>
-                        <li>Melhorado desempenho do monitor de sistema</li>
-                        <li>Adicionado mais opções de personalização</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Versão 1.5 -->
-            <div class="changelog-item fade-in-up">
-                <div class="changelog-header">
-                    <span class="changelog-version">v1.5.0</span>
-                    <span class="changelog-badge minor">Menor</span>
-                    <span class="changelog-date">Novembro 2025</span>
-                </div>
-                <div class="changelog-content">
-                    <h4>🆕 Novos Recursos</h4>
-                    <ul class="changelog-list add">
-                        <li>Adicionado otimizador de rede com redução de ping</li>
-                        <li>Implementado sistema de backup automático</li>
-                        <li>Novo script de privacidade e telemetria</li>
-                    </ul>
-
-                    <h4>🔧 Correções</h4>
-                    <ul class="changelog-list fix">
-                        <li>Corrigido bug no otimizador de SSD</li>
-                        <li>Melhorada compatibilidade com Windows 11</li>
-                        <li>Fixado problema de permissões em alguns scripts</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Versão 1.4 -->
-            <div class="changelog-item fade-in-up">
-                <div class="changelog-header">
-                    <span class="changelog-version">v1.4.0</span>
-                    <span class="changelog-badge patch">correção</span>
-                    <span class="changelog-date">Outubro 2025</span>
-                </div>
-                <div class="changelog-content">
-                    <h4>🔧 Correções e Melhorias</h4>
-                    <ul class="changelog-list fix">
-                        <li>Otimizado script de limpeza para maior velocidade</li>
-                        <li>Melhorado algoritmo de detecção de sistema</li>
-                        <li>Adicionado mais opções de configuração</li>
-                    </ul>
-
-                    <h4>🗑️ Removido</h4>
-                    <ul class="changelog-list remove">
-                        <li>Removido script obsoleto de otimização antiga</li>
-                        <li>Eliminado código legado não utilizado</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Documentation Section -->
-    <section class="docs" id="docs">
-        <h2 class="section-title">Documentação & Guias</h2>
-        <p class="section-subtitle">Aprenda a usar cada recurso e maximize seu desempenho</p>
-
-        <div class="docs-grid">
-            <a href="#instalacao" class="doc-card fade-in-up">
-                <div class="doc-icon">📥</div>
-                <h3 class="doc-title">Instalação e Configuração</h3>
-                <p class="doc-description">Guia completo de como instalar e configurar o KelvenOS Optimizer em seu sistema Windows.</p>
-            </a>
-
-            <a href="#uso-basico" class="doc-card fade-in-up">
-                <div class="doc-icon">🎯</div>
-                <h3 class="doc-title">Uso Básico</h3>
-                <p class="doc-description">Aprenda os conceitos fundamentais e como começar a otimizar seu sistema de forma segura.</p>
-            </a>
-
-            <a href="#scripts-avancados" class="doc-card fade-in-up">
-                <div class="doc-icon">⚡</div>
-                <h3 class="doc-title">Scripts Avançados</h3>
-                <p class="doc-description">Documentação técnica detalhada de cada script e suas funcionalidades específicas.</p>
-            </a>
-
-            <a href="#solucao-problemas" class="doc-card fade-in-up">
-                <div class="doc-icon">🔧</div>
-                <h3 class="doc-title">Solução de Problemas</h3>
-                <p class="doc-description">Respostas para problemas comuns e como resolver questões de compatibilidade.</p>
-            </a>
-
-            <a href="#benchmarks" class="doc-card fade-in-up">
-                <div class="doc-icon">📊</div>
-                <h3 class="doc-title">Benchmarks & Testes</h3>
-                <p class="doc-description">Resultados de testes de performance e comparações antes/depois das otimizações.</p>
-            </a>
-
-            <a href="#api-referencia" class="doc-card fade-in-up">
-                <div class="doc-icon">🔌</div>
-                <h3 class="doc-title">API & Referência</h3>
-                <p class="doc-description">Documentação técnica para desenvolvedores que querem integrar ou modificar os scripts.</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="faq-container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <p class="section-subtitle">Respostas para as dúvidas mais comuns sobre o KelvenOS Optimizer</p>
-
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <h3>Os scripts são seguros para usar?</h3>
-                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    <button onclick="downloadScript('scripts/fps-extreme/restore-original.bat')" class="download-btn">
+                        Baixar Script
                     </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <p>Sim! Todos os scripts são testados extensivamente em múltiplos ambientes. Recomendamos sempre criar um ponto de restauração antes de executar e ler o código antes de aplicar. Os scripts são open source, então você pode verificar cada linha.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <h3>Preciso executar todos os scripts?</h3>
-                        <span class="faq-icon" aria-hidden="true">▼</span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <p>Não! Cada script é independente e atende a necessidades específicas. Use apenas os que fizerem sentido para seu uso. Recomendamos começar com o Monitor de Performance para avaliar seu sistema antes de aplicar otimizações.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <h3>Funciona em qualquer versão do Windows?</h3>
-                        <span class="faq-icon" aria-hidden="true">▼</span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <p>Os scripts são compatíveis com Windows 10 e 11 (todas as versões). Algumas otimizações específicas podem variar conforme a versão. Recomendamos Windows 10 1903+ ou Windows 11 para melhor experiência.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <h3>Como faço para desfazer as otimizações?</h3>
-                        <span class="faq-icon" aria-hidden="true">▼</span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <p>Cada script tem um correspondente de restauração. Recomendamos sempre criar um ponto de restauração antes de aplicar otimizações. Você também pode usar o script de backup/recuperação incluído no pacote.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <h3>Posso usar em computadores corporativos?</h3>
-                        <span class="faq-icon" aria-hidden="true">▼</span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <p>Recomendamos uso pessoal. Em ambientes corporativos, algumas otimizações podem afetar políticas de segurança. Consulte o departamento de TI antes de aplicar em máquinas da empresa.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <h3>Quanto ganho de performance posso esperar?</h3>
-                        <span class="faq-icon" aria-hidden="true">▼</span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <p>Varia conforme seu sistema, mas usuários relatam ganhos de 10-25% em FPS em jogos, boot 40% mais rápido, e latência reduzida em até 30%. Use nosso monitor para medir os resultados em seu sistema específico.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Section -->
-    <section class="community" id="community">
-        <div class="community-container">
-            <h2 class="section-title">Comunidade KelvenOS</h2>
-            <p class="section-subtitle">Junte-se a milhares de usuários otimizando seus sistemas</p>
-
-            <div class="community-grid">
-                <div class="community-card fade-in-up">
-                    <div class="community-icon">💬</div>
-                    <h3 class="community-title">Discord</h3>
-                    <p class="community-description">Chat em tempo real com a comunidade, suporte técnico, compartilhamento de experiências e novidades em primeira mão.</p>
-                    <div class="community-stats">
-                        <div class="community-stat">
-                            <span class="community-stat-number">18</span>
-                            <span class="community-stat-label">Membros</span>
-                        </div>
-                        <div class="community-stat">
-                            <span class="community-stat-number">24/7</span>
-                            <span class="community-stat-label">Suporte</span>
-                        </div>
-                    </div>
-                    <a href="https://discord.gg/YnWMgwDgEq" class="btn btn-primary">Entrar no Discord</a>
                 </div>
             </div>
         </div>
@@ -2032,176 +1089,125 @@
 
     <script>
         /**
-         * KelvenOS Optimizer - Scripts de Funcionalidade
-         * Organizado e otimizado para melhor performance e manutenibilidade
+         * KelvenOS Optimizer - DOWNLOAD DIRETO E FORÇADO
+         * Não abre o conteúdo, baixa direto!
          */
 
         // ============================================
-        // CONFIGURAÇÕES E CONSTANTES
+        // CONFIGURAÇÕES
         // ============================================
         const CONFIG = {
-            GITHUB_BASE_URL: 'https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/scripts/',
-            COUNTDOWN_TARGET: '2026-01-01T00:00:00',
+            GITHUB_RAW_URL: 'https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/',
             SCROLL_THRESHOLD: 50,
             ANIMATION_DELAY: 1000,
             FADE_DURATION: 500
         };
 
         // ============================================
-        // UTILITÁRIOS
+        // DOWNLOAD DIRETO E FORÇADO - SEM ABRIR CONTEÚDO
         // ============================================
-        const Utils = {
-            /**
-             * Cria um elemento DOM de forma segura
-             */
-            createElement: (tag, attributes = {}, textContent = '') => {
-                const element = document.createElement(tag);
-                Object.entries(attributes).forEach(([key, value]) => {
-                    element.setAttribute(key, value);
-                });
-                if (textContent) element.textContent = textContent;
-                return element;
-            },
+        function downloadScript(scriptPath) {
+            try {
+                // URL correta para download direto
+                const downloadUrl = `https://raw.githubusercontent.com/kelven-optimizer/kelvenoptimizer/main/${scriptPath}`;
+                const fileName = scriptPath.split('/').pop();
+                
+                console.log(`📥 Baixando: ${fileName}`);
+                console.log(`🔗 URL: ${downloadUrl}`);
 
-            /**
-             * Debounce para otimizar eventos de scroll
-             */
-            debounce: (func, wait) => {
-                let timeout;
-                return function executedFunction(...args) {
-                    const later = () => {
-                        clearTimeout(timeout);
-                        func(...args);
-                    };
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                };
-            },
-
-            /**
-             * Verifica se um elemento existe antes de manipular
-             */
-            safeQuerySelector: (selector) => {
-                try {
-                    return document.querySelector(selector);
-                } catch (error) {
-                    console.warn(`Elemento não encontrado: ${selector}`, error);
-                    return null;
-                }
+                // Cria elemento de download temporário
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = fileName;
+                link.style.display = 'none';
+                
+                // Força o download sem abrir
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Remove o link temporário
+                window.URL.revokeObjectURL(link.href);
+                
+                // Feedback visual
+                showDownloadFeedback(fileName);
+                
+                console.log(`✅ Download forçado iniciado: ${fileName}`);
+                
+            } catch (error) {
+                console.error('❌ Erro no download:', error);
+                alert(`Erro ao baixar ${scriptPath}. Por favor, tente novamente.`);
             }
-        };
+        }
 
         // ============================================
-        // DOWNLOAD DE SCRIPTS
+        // FEEDBACK VISUAL DE DOWNLOAD
         // ============================================
-        const DownloadManager = {
-            /**
-             * Baixa um script do GitHub
-             * @param {string} scriptName - Nome do arquivo do script
-             */
-            downloadScript: (scriptName) => {
-                try {
-                    const downloadUrl = CONFIG.GITHUB_BASE_URL + scriptName;
-                    const link = Utils.createElement('a', {
-                        href: downloadUrl,
-                        download: scriptName,
-                        target: '_blank',
-                        rel: 'noopener noreferrer'
-                    });
-
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-
-                    // Feedback visual melhorado
-                    const message = `Iniciando download: ${scriptName}\n\n📋 Importante:\n• Execute como Administrador\n• Crie ponto de restauração antes\n• Leia o código antes de executar`;
-
-                    // Tenta usar notificação moderna, fallback para alert
-                    if ('Notification' in window && Notification.permission === 'granted') {
-                        new Notification('KelvenOS Optimizer', {
-                            body: `Download iniciado: ${scriptName}`,
-                            icon: 'https://github.com/kelven-optimizer/kelvenoptimizer/blob/7848345f64f7bbe49e3357a73d74300a8ac1ab82/imagens/kelvenos.png?raw=true'
-                        });
-                    } else {
-                        alert(message);
+        function showDownloadFeedback(fileName) {
+            // Cria notificação visual
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--gradient-purple);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 30px rgba(139, 0, 255, 0.3);
+                z-index: 9999;
+                font-weight: 600;
+                animation: slideInRight 0.3s ease-out;
+            `;
+            notification.textContent = `📥 Download iniciado: ${fileName}`;
+            
+            document.body.appendChild(notification);
+            
+            // Remove após 3 segundos
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease-in';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
                     }
-                } catch (error) {
-                    console.error('Erro ao baixar script:', error);
-                    alert(`Erro ao iniciar download de ${scriptName}. Por favor, tente novamente.`);
-                }
-            }
-        };
+                }, 300);
+            }, 3000);
+        }
 
         // ============================================
-        // COUNTDOWN TIMER
+        // ADICIONA ANIMAÇÕES CSS PARA NOTIFICAÇÃO
         // ============================================
-        const CountdownTimer = {
-            intervalId: null,
-            targetDate: new Date(CONFIG.COUNTDOWN_TARGET),
-
-            /**
-             * Atualiza o contador regressivo
-             */
-            update: () => {
-                const now = new Date();
-                const difference = CountdownTimer.targetDate - now;
-                const countdownContainer = Utils.safeQuerySelector('.countdown-container');
-
-                if (!countdownContainer) return;
-
-                if (difference > 0) {
-                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                    const updateElement = (id, value) => {
-                        const element = document.getElementById(id);
-                        if (element) element.textContent = String(value).padStart(2, '0');
-                    };
-
-                    updateElement('days', days);
-                    updateElement('hours', hours);
-                    updateElement('minutes', minutes);
-                    updateElement('seconds', seconds);
-                } else {
-                    CountdownTimer.complete();
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
                 }
-            },
-
-            /**
-             * Exibe mensagem quando o countdown termina
-             */
-            complete: () => {
-                const countdownContainer = Utils.safeQuerySelector('.countdown-container');
-                if (countdownContainer) {
-                    countdownContainer.innerHTML = `
-                        <h3 class="countdown-title">🎉 Lançamento Disponível!</h3>
-                        <p style="color: var(--text-secondary); margin-top: 1rem;">Os novos produtos já estão disponíveis!</p>
-                    `;
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
                 }
-                if (CountdownTimer.intervalId) {
-                    clearInterval(CountdownTimer.intervalId);
-                }
-            },
-
-            /**
-             * Inicia o countdown
-             */
-            start: () => {
-                CountdownTimer.update();
-                CountdownTimer.intervalId = setInterval(CountdownTimer.update, 1000);
             }
-        };
+            
+            @keyframes slideOutRight {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
 
         // ============================================
         // NAVEGAÇÃO E SCROLL
         // ============================================
         const Navigation = {
-            /**
-             * Gerencia efeitos de scroll na navbar
-             */
-            handleScroll: Utils.debounce(() => {
+            handleScroll: () => {
                 const navbar = document.getElementById('navbar');
                 const scrollTop = document.getElementById('scrollTop');
                 const scrollY = window.scrollY;
@@ -2213,11 +1219,8 @@
                     if (navbar) navbar.classList.remove('scrolled');
                     if (scrollTop) scrollTop.classList.remove('visible');
                 }
-            }, 10),
+            },
 
-            /**
-             * Configura scroll suave para âncoras
-             */
             initSmoothScroll: () => {
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function(e) {
@@ -2236,9 +1239,6 @@
                 });
             },
 
-            /**
-             * Botão scroll to top
-             */
             initScrollToTop: () => {
                 const scrollTopBtn = document.getElementById('scrollTop');
                 if (scrollTopBtn) {
@@ -2248,65 +1248,24 @@
                             behavior: 'smooth'
                         });
                     });
-
-                    // Acessibilidade: navegação por teclado
-                    scrollTopBtn.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            scrollTopBtn.click();
-                        }
-                    });
                 }
             }
         };
 
         // ============================================
-        // FAQ ACCORDION
+        // MENU MOBILE
         // ============================================
-        const FAQ = {
-            /**
-             * Inicializa o sistema de accordion do FAQ
-             */
+        const MobileMenu = {
             init: () => {
-                document.querySelectorAll('.faq-question').forEach(question => {
-                    question.addEventListener('click', () => {
-                        const faqItem = question.closest('.faq-item');
-                        if (!faqItem) return;
+                const toggle = document.querySelector('.mobile-menu-toggle');
+                const navLinks = document.querySelector('.nav-links');
 
-                        const isActive = faqItem.classList.contains('active');
-                        const answer = faqItem.querySelector('.faq-answer');
-
-                        // Fecha todos os itens
-                        document.querySelectorAll('.faq-item').forEach(item => {
-                            item.classList.remove('active');
-                            const itemQuestion = item.querySelector('.faq-question');
-                            const itemAnswer = item.querySelector('.faq-answer');
-                            if (itemQuestion) itemQuestion.setAttribute('aria-expanded', 'false');
-                            if (itemAnswer) {
-                                itemAnswer.setAttribute('aria-hidden', 'true');
-                                itemAnswer.setAttribute('aria-expanded', 'false');
-                            }
-                        });
-
-                        // Abre o item clicado se estava fechado
-                        if (!isActive) {
-                            faqItem.classList.add('active');
-                            question.setAttribute('aria-expanded', 'true');
-                            if (answer) {
-                                answer.setAttribute('aria-hidden', 'false');
-                                answer.setAttribute('aria-expanded', 'true');
-                            }
-                        }
+                if (toggle && navLinks) {
+                    toggle.addEventListener('click', () => {
+                        toggle.classList.toggle('active');
+                        navLinks.classList.toggle('active');
                     });
-
-                    // Acessibilidade: navegação por teclado
-                    question.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            question.click();
-                        }
-                    });
-                });
+                }
             }
         };
 
@@ -2316,9 +1275,6 @@
         const Animations = {
             observer: null,
 
-            /**
-             * Configura Intersection Observer para animações
-             */
             initObserver: () => {
                 const observerOptions = {
                     threshold: 0.1,
@@ -2330,130 +1286,34 @@
                         if (entry.isIntersecting) {
                             entry.target.style.opacity = '1';
                             entry.target.style.transform = 'translateY(0)';
-                            // Para de observar após animação
                             Animations.observer.unobserve(entry.target);
                         }
                     });
                 }, observerOptions);
             },
 
-            /**
-             * Inicia animações de entrada
-             */
             start: () => {
                 if (!Animations.observer) {
                     Animations.initObserver();
                 }
 
                 const animatedElements = document.querySelectorAll(
-                    '.feature-card, .script-card, .stat-item, .product-card, .changelog-item, .doc-card, .community-card'
+                    '.feature-card, .script-card, .stat-item, .product-card'
                 );
 
                 animatedElements.forEach(el => {
                     el.style.opacity = '0';
                     el.style.transform = 'translateY(30px)';
                     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                    el.style.willChange = 'opacity, transform';
                     Animations.observer.observe(el);
                 });
             }
         };
 
         // ============================================
-        // EFEITOS VISUAIS
-        // ============================================
-        const VisualEffects = {
-            /**
-             * Adiciona efeito ripple aos botões
-             */
-            initRippleEffect: () => {
-                document.querySelectorAll('.download-btn, .btn').forEach(btn => {
-                    btn.addEventListener('click', function(e) {
-                        const rect = this.getBoundingClientRect();
-                        const size = Math.max(rect.width, rect.height);
-                        const x = e.clientX - rect.left - size / 2;
-                        const y = e.clientY - rect.top - size / 2;
-
-                        const ripple = Utils.createElement('span', {
-                            class: 'ripple-effect'
-                        });
-
-                        ripple.style.cssText = `
-                            position: absolute;
-                            width: ${size}px;
-                            height: ${size}px;
-                            left: ${x}px;
-                            top: ${y}px;
-                            border-radius: 50%;
-                            background: rgba(255, 255, 255, 0.6);
-                            transform: scale(0);
-                            animation: ripple 0.6s linear;
-                            pointer-events: none;
-                        `;
-
-                        this.style.position = 'relative';
-                        this.style.overflow = 'hidden';
-                        this.appendChild(ripple);
-
-                        setTimeout(() => {
-                            if (ripple.parentNode) {
-                                ripple.remove();
-                            }
-                        }, 600);
-                    });
-                });
-            }
-        };
-
-        // ============================================
-        // LOADING SCREEN
-        // ============================================
-        const LoadingScreen = {
-            /**
-             * Remove a tela de carregamento
-             */
-            hide: () => {
-                const overlay = document.getElementById('loadingOverlay');
-                if (overlay) {
-                    overlay.style.opacity = '0';
-                    setTimeout(() => {
-                        overlay.style.display = 'none';
-                        overlay.remove();
-                    }, CONFIG.FADE_DURATION);
-                }
-            }
-        };
-
-        // ============================================
-        // MENU MOBILE
-        // ============================================
-        const MobileMenu = {
-            /**
-             * Inicializa o menu mobile
-             */
-            init: () => {
-                const toggle = document.querySelector('.mobile-menu-toggle');
-                const navLinks = document.querySelector('.nav-links');
-
-                if (toggle && navLinks) {
-                    toggle.addEventListener('click', () => {
-                        toggle.classList.toggle('active');
-                        navLinks.classList.toggle('active');
-                        const isActive = toggle.classList.contains('active');
-                        toggle.setAttribute('aria-expanded', isActive);
-                        navLinks.setAttribute('aria-expanded', isActive);
-                    });
-                }
-            }
-        };
-
-        // ============================================
-        // INICIALIZAÇÃO
+        // INICIALIZAÇÃO PRINCIPAL
         // ============================================
         const App = {
-            /**
-             * Inicializa todas as funcionalidades
-             */
             init: () => {
                 // Aguarda carregamento completo
                 if (document.readyState === 'loading') {
@@ -2461,61 +1321,34 @@
                     return;
                 }
 
-                // Loading screen
+                // Remove loading screen
                 setTimeout(() => {
-                    LoadingScreen.hide();
+                    const overlay = document.getElementById('loadingOverlay');
+                    if (overlay) {
+                        overlay.style.opacity = '0';
+                        setTimeout(() => overlay.remove(), CONFIG.FADE_DURATION);
+                    }
+                    
+                    // Inicia animações
                     Animations.start();
-                    CountdownTimer.start();
                 }, CONFIG.ANIMATION_DELAY);
 
-                // Navegação
+                // Configura navegação
                 Navigation.initSmoothScroll();
                 Navigation.initScrollToTop();
-                window.addEventListener('scroll', Navigation.handleScroll, {
-                    passive: true
-                });
+                window.addEventListener('scroll', Navigation.handleScroll, { passive: true });
 
-                // FAQ
-                FAQ.init();
-
-                // Menu mobile
+                // Inicia componentes
                 MobileMenu.init();
 
-                // Efeitos visuais
-                VisualEffects.initRippleEffect();
-
-                // Adiciona animação ripple ao CSS
-                if (!document.getElementById('ripple-animation-style')) {
-                    const style = Utils.createElement('style', {
-                        id: 'ripple-animation-style'
-                    });
-                    style.textContent = `
-                        @keyframes ripple {
-                            to {
-                                transform: scale(4);
-                                opacity: 0;
-                            }
-                        }
-                    `;
-                    document.head.appendChild(style);
-                }
-
-                // Solicita permissão para notificações (se suportado)
-                if ('Notification' in window && Notification.permission === 'default') {
-                    Notification.requestPermission().catch(() => {
-                        // Ignora se o usuário negar
-                    });
-                }
+                console.log('🚀 KelvenOS Optimizer - Carregado com sucesso!');
+                console.log('📥 Downloads diretos e forçados ativados!');
+                console.log('✅ Não abre conteúdo, baixa direto!');
             }
         };
 
         // ============================================
-        // EXPORT PARA USO GLOBAL
-        // ============================================
-        window.downloadScript = DownloadManager.downloadScript;
-
-        // ============================================
-        // INICIALIZA A APLICAÇÃO
+        // INICIA A APLICAÇÃO
         // ============================================
         App.init();
     </script>
